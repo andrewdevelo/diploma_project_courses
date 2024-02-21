@@ -40,7 +40,6 @@ class UserRegistrationGenericView(CreateAPIView):
 
 
 class ListUsersGenericView(ListAPIView):
-    # permission_classes = [IsAuthenticated]
     permission_classes = [IsAuthenticated, IsAdminUser]
     serializer_class = UserListSerializer
 
