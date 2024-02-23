@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'apps.jwt_config.apps.JwtConfigConfig',
     'apps.course.apps.CourseConfig',
     'apps.module.apps.ModuleConfig',
+    'apps.material.apps.MaterialConfig',
 
 ]
 
