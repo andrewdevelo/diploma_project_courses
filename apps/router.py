@@ -4,4 +4,5 @@ urlpatterns = [
     path('users/', include('apps.user.urls')),
     path('courses/', include('apps.course.urls')),
     path('modules/', include('apps.module.urls')),
+    path('materials/', include('apps.material.urls')),
 ]
