@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'apps.course.apps.CourseConfig',
     'apps.module.apps.ModuleConfig',
     'apps.material.apps.MaterialConfig',
+    'apps.enrollment.apps.EnrollmentConfig',
 
 ]
 
