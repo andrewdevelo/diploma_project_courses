@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'apps.module.apps.ModuleConfig',
     'apps.material.apps.MaterialConfig',
     'apps.enrollment.apps.EnrollmentConfig',
+    'apps.user_progress.apps.UserProgressConfig',
 
 ]
 

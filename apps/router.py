@@ -6,4 +6,5 @@ urlpatterns = [
     path('modules/', include('apps.module.urls')),
     path('materials/', include('apps.material.urls')),
     path('enrollments/', include('apps.enrollment.urls')),
+    path('progress/', include('apps.user_progress.urls')),
 ]
