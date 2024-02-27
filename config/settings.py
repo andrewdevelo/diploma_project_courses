@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # 3-rd party
     'rest_framework',
     'rest_framework_simplejwt',
+    'drf_yasg',
 
     # local
     'apps.user.apps.UserConfig',
@@ -56,6 +57,7 @@ INSTALLED_APPS = [
     'apps.module.apps.ModuleConfig',
     'apps.material.apps.MaterialConfig',
     'apps.enrollment.apps.EnrollmentConfig',
+    'apps.user_progress.apps.UserProgressConfig',
 
 ]
 
