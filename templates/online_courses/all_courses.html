@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block title %}
+All courses
+{% endblock %}
+
+{% block content %}
+<div class="online-courses">
+    {% for course in courses %}
+        <div class="course">
+            <h2><span class="course-description">Title: </span>{{ course.title }}</h2>
+            <h4><span class="course-description">Description: </span>{{ course.description }}</h4>
+            <h4><span class="course-description">Start_date: </span>{{ course.start_date }}</h4>
+            <h4><span class="course-description">End_date: </span>{{ course.end_date }}</h4>
+            <h4><span class="course-description">Instructor: </span>{{ course.instructor }}</h4>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
