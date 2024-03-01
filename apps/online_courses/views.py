@@ -5,11 +5,11 @@ from django.shortcuts import (
 )
 from apps.course.models import Course
 from apps.user.models import User
-from apps.module.models import Module
-from apps.material.models import Material
+from apps.enrollment.models import Enrollment
 from apps.online_courses.forms import (
     CreateCourseForm,
-    CourseUpdateForm
+    CourseUpdateForm,
+    CreateEnrollmentForm
 )
 
 
@@ -112,3 +112,34 @@ def delete_course(request, course_id):
 
     course.delete()
     return redirect('all-courses')
+
+
+def enroll_in_course(request):
+    courses = Course.objects.all()
+    users = request.POST.get('user_id')
+
+    if request.method == 'POST':
+        form = CreateEnrollmentForm(request.POST)
+        if form.is_valid():
+            enrollment_data = form.cleaned_data
+            Enrollment.objects.create(**enrollment_data)
+            return redirect('all-courses')
+
+        context = {
+            "form": form,
+            "users": users,
+            "courses": courses,
+        }
+    else:
+        form = CreateEnrollmentForm
+        context = {
+            "form": form,
+            "users": users,
+            "courses": courses,
+        }
+
+    return render(
+        request=request,
+        template_name='online_courses/enroll_course.html',
+        context=context
+    )

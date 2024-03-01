@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+{% block title %}
+New Enrollment
+{% endblock %}
+
+{% block content %}
+<div class="new-enrollment-title">
+    New Enrollment
+</div>
+<div class="new-enrollment-container">
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="user" class="form-label">User</label>
+            <select class="form-control" id="user" name="user">
+                <option value="" selected="">---</option>
+                <option value="{{ user.id }}">{{ user.last_name }}</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="course" class="form-label">Course</label>
+            <select class="form-control" id="course" name="course">
+                <option value="" selected="">---</option>
+                {% for course in courses %}
+                <option value="{{ course.id }}">{{ course.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="enrollment_date" class="form-label">Enrollment Date</label>
+            <input type="datetime-local" class="form-control" id="enrollment_date" name="enrollment_date">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Create Enrollment</button>
+    </form>
+</div>
+{% endblock %}
