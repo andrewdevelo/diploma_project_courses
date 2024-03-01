@@ -7,6 +7,7 @@ All courses
 {% block content %}
 <div class="online-courses">
     {% for course in courses %}
+    <a href="{% url 'course-info' course.id %}" class="course-link">
         <div class="course">
             <h2><span class="course-description">Title: </span>{{ course.title }}</h2>
             <h4><span class="course-description">Description: </span>{{ course.description }}</h4>
@@ -14,6 +15,7 @@ All courses
             <h4><span class="course-description">End_date: </span>{{ course.end_date }}</h4>
             <h4><span class="course-description">Instructor: </span>{{ course.instructor }}</h4>
         </div>
+    </a>>
     {% endfor %}
 </div>
 {% endblock %}

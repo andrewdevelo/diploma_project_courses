@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Course - Info
+{% endblock %}
+
+{% block content %}
+<div class="online-courses">
+    <div class="course">
+        <h2><span class="course-description">Title: </span>{{ course.title }}</h2>
+        <h4><span class="course-description">Description: </span>{{ course.description }}</h4>
+        <h4><span class="course-description">Start_date: </span>{{ course.start_date }}</h4>
+        <h4><span class="course-description">End_date: </span>{{ course.end_date }}</h4>
+        <h4><span class="course-description">Instructor: </span>{{ course.instructor }}</h4>
+    </div>
+    <div class="button-container">
+        <a href="{% url 'update-course' course.id %}" class="update-button">Update</a>
+        <a href="{% url 'delete-course' course.id %}" class="delete-button">Delete</a>
+        <a href="{% url 'create-course' %}" class="create-button">Create new course</a>
+    </div>
+</div>
+{% endblock %}

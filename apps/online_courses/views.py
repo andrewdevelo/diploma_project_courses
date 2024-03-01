@@ -93,30 +93,22 @@ def update_course(request, course_id):
     )
 
 
-# def get_course_info_by_course_id(request, course_id):
-#     course = get_object_or_404(Course, id=course_id)
-#     module = Module.objects.filter(
-#         course=course_id
-#     )
-#     material = Material.objects.filter(
-#         course=course_id
-#     )
-#
-#     context = {
-#         "course": course,
-#         "module": module,
-#         "material": material,
-#     }
-#
-#     return render(
-#         request=request,
-#         template_name='online_courses/course_info.html',
-#         context=context
-#     )
-#
-#
-# def delete_course(request, course_id):
-#     course = get_object_or_404(Course, id=course_id)
-#
-#     course.delete()
-#     return redirect('all-courses')
+def get_course_info_by_course_id(request, course_id):
+    course = get_object_or_404(Course, id=course_id)
+
+    context = {
+        "course": course,
+    }
+
+    return render(
+        request=request,
+        template_name='online_courses/course_info.html',
+        context=context
+    )
+
+
+def delete_course(request, course_id):
+    course = get_object_or_404(Course, id=course_id)
+
+    course.delete()
+    return redirect('all-courses')
