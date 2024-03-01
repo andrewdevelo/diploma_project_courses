@@ -15,6 +15,6 @@ urlpatterns = [
     path("create/", create_new_course, name='create-course'),
     path("<int:course_id>/", get_course_info_by_course_id, name='course-info'),
     path("<int:course_id>/update/", update_course, name='update-course'),
-    path("<int:course_id>.delete/", delete_course, name='delete-course'),
+    path("<int:course_id>/delete/", delete_course, name='delete-course'),
     path("enroll/", enroll_in_course, name='enroll-course'),
 ]

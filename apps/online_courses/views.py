@@ -9,7 +9,7 @@ from apps.enrollment.models import Enrollment
 from apps.online_courses.forms import (
     CreateCourseForm,
     CourseUpdateForm,
-    CreateEnrollmentForm
+    CreateEnrollmentForm,
 )
 
 

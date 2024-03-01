@@ -4,7 +4,6 @@ from django.forms import (
     ModelChoiceField,
     widgets,
 )
-
 from apps.user.models import User
 from apps.course.models import Course
 from apps.enrollment.models import Enrollment
