@@ -6,6 +6,7 @@ from apps.online_courses.views import (
     get_course_info_by_course_id,
     update_course,
     delete_course,
+    enroll_in_course,
 )
 
 urlpatterns = [
@@ -15,4 +16,5 @@ urlpatterns = [
     path("<int:course_id>/", get_course_info_by_course_id, name='course-info'),
     path("<int:course_id>/update/", update_course, name='update-course'),
     path("<int:course_id>.delete/", delete_course, name='delete-course'),
+    path("enroll/", enroll_in_course, name='enroll-course'),
 ]

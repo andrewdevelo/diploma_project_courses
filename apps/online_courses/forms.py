@@ -7,6 +7,7 @@ from django.forms import (
 
 from apps.user.models import User
 from apps.course.models import Course
+from apps.enrollment.models import Enrollment
 
 
 class CreateCourseForm(ModelForm):
@@ -42,3 +43,23 @@ class CourseUpdateForm(ModelForm):
     class Meta:
         model = Course
         fields = ('title', 'description', 'start_date', 'end_date', 'instructor')
+
+
+class CreateEnrollmentForm(ModelForm):
+    user = ModelChoiceField(
+        queryset=User.objects.all()
+    )
+    course = ModelChoiceField(
+        queryset=Course.objects.all()
+    )
+    enrollment_date = fields.DateTimeField(
+        localize=True,
+        widget=widgets.DateTimeInput(
+            format=('%Y-%m-%dT%H:%M'),
+            attrs={'type': 'datetime-local'}
+        )
+    )
+
+    class Meta:
+        model = Enrollment
+        fields = ('user', 'course', 'enrollment_date')
